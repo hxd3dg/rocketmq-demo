@@ -57,6 +57,7 @@
 			<scope>test</scope>
 		</dependency>
 
+		<!--rocketmq集成alibaba的springcloud-->
 		<dependency>
 			<groupId>com.alibaba.cloud</groupId>
 			<artifactId>spring-cloud-starter-stream-rocketmq</artifactId>
