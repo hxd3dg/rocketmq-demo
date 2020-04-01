@@ -19,7 +19,6 @@ public class Comsumer {
 
     @StreamListener("input2")
     public void sel(Object s){
-        
         System.out.println("input2 :"+s);
     }
 

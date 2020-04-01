@@ -1,5 +1,6 @@
 package com.example.rocketmq.ProducerAndComsumer;
 
+import org.apache.rocketmq.spring.support.RocketMQHeaders;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.MessageChannel;
 import org.springframework.messaging.support.MessageBuilder;
@@ -20,8 +21,9 @@ public class Producer {
     MessageChannel output1;
 
     public void send(Object string){
-        output.send(MessageBuilder.withPayload(string).build());
-        output1.send(MessageBuilder.withPayload(string).build());
+        //设置tag
+        output.send(MessageBuilder.withPayload(string).setHeader(RocketMQHeaders.TAGS, "tag1").build());
+        //output1.send(MessageBuilder.withPayload(string).build());
 
     }
 }

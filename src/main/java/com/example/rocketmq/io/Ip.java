@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 @Component
 public interface Ip {
 
-    java.lang.String INPUT = "input1";
+    public String INPUT = "input1";
 
     @Input("input1")
     public MessageChannel input1();
