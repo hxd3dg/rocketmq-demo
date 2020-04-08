@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class Comsumer {
-    //在这里消费应该实现幂等性
+    //消费应该实现幂等性,防止重复消费
 
     @StreamListener(Ip.INPUT)
     public void sll(Object s){
