@@ -35,12 +35,14 @@ public class CustomTransactionListener implements RocketMQLocalTransactionListen
     @Override
     public RocketMQLocalTransactionState executeLocalTransaction(Message msg,
                                                                  Object arg) {
+        //可以理解为消息发送后,mq已接收到信息后的本地业务及事务,如银行扣款发送消息成功后,本地才会-100
         return RocketMQLocalTransactionState.COMMIT;
     }
 
     @Override
     public RocketMQLocalTransactionState checkLocalTransaction(Message msg) {
         System.out.println(msg + " check local");
+        //可以理解为消息发送后,mq没有返回消息,不知mq是否接收消息成功,此时应该处理的业务
         return RocketMQLocalTransactionState.COMMIT;
     }
 
