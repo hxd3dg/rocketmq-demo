@@ -13,6 +13,8 @@ import org.springframework.stereotype.Component;
 public class Comsumer {
     //消费应该实现幂等性,防止重复消费
 
+    //同时需要另外监听对应的死信队列
+
     @StreamListener(Ip.INPUT)
     public void sll(Object s){
         System.out.println("input1 :"+s);

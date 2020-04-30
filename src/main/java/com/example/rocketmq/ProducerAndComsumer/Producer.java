@@ -21,6 +21,7 @@ public class Producer {
     MessageChannel output1;
 
     public void send(Object string){
+        System.out.println(string + " send");
         //设置tag
         output.send(MessageBuilder.withPayload(string).setHeader(RocketMQHeaders.TAGS, "tag1").build());
         //output1.send(MessageBuilder.withPayload(string).build());
